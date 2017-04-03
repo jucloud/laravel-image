@@ -5,7 +5,7 @@ namespace App\Image;
 
 use Illuminate\Support\ServiceProvider;
 
-class ServiceProvider extends ServiceProvider
+class ImageServiceProvider extends ServiceProvider
 {
 
     /**
