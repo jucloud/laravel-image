@@ -1,0 +1,47 @@
+<?php
+namespace App\Models\Image;
+
+
+use App\Image\Models\ImageBase;
+
+class Image extends ImageBase
+{
+
+    /**
+     * @return array
+     */
+    public function transform()
+    {
+        $data = parent::transform();
+        $data['image_url'] = $this->getImageUrl();
+
+        if ($this->hasPivot()) {
+            $parent = $this->getPivotParent();
+//            if ($parent instanceof Product) {
+//                $data['product_image_url'] = $this->getProductImageUrlAttribute();
+//            }
+        }
+        return $data;
+    }
+
+    /**
+     * @param null $type
+     * @return null|string
+     */
+    public function getDefaultImageUrl($type = null)
+    {
+//        return url('images/default.jpg');
+        return null;
+    }
+
+    /**
+     * For usage: $image->cover_image_url;
+     *
+     * @return null|string
+     */
+    public function getCoverImageUrlAttribute()
+    {
+        return $this->getTypeImageUrl('cover');
+    }
+
+}
