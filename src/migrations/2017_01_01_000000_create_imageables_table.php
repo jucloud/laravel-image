@@ -22,7 +22,7 @@ class CreateImageablesTable extends Migration
             $table->unsignedInteger('image_id')->index();
             $table->boolean('is_main')->default(false);
             $table->string('type')->nullable();
-            $table->json('data')->nullable();
+            $table->string('data');
 
 //            $table->unsignedInteger('created_by')->nullable();
 //            $table->timestamp('created_at')->nullable();
