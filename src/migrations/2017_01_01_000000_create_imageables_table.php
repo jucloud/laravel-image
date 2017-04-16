@@ -23,12 +23,13 @@ class CreateImageablesTable extends Migration
             $table->boolean('is_main')->default(false);
             $table->string('type')->nullable();
             $table->string('data');
-//            $table->unsignedInteger('created_by')->nullable();
-//            $table->timestamp('created_at')->nullable();
-//            $table->ipAddress('created_ip')->nullable();
-//            $table->unsignedInteger('updated_by')->nullable();
-//            $table->timestamp('updated_at')->nullable();
-//            $table->ipAddress('updated_ip')->nullable();
+
+           	$table->unsignedInteger('created_by')->nullable();
+           	$table->timestamp('created_at')->nullable();
+           	$table->ipAddress('created_ip')->nullable();
+           	$table->unsignedInteger('updated_by')->nullable();
+           	$table->timestamp('updated_at')->nullable();
+           	$table->ipAddress('updated_ip')->nullable();
 		});
 	}
 
